@@ -5,24 +5,17 @@
 
 export const REMOVE_FEATURE = "REMOVE_FEATURE";
 // action creators are just functions that "create" (aka return) actions
-export const removeFeature = (id) => {
+export const removeFeature = (feature) => {
   console.log("action creator called");
   return { type: REMOVE_FEATURE, 
-    payload: {
-        removePrice: id.price,
-        removeF: id
-    }
-  }
+    payload: feature}
 };
 
 export const ADD_FEATURE = "ADD_FEATURE";
 
 export const addFeature = newFeature => {
   return { type: ADD_FEATURE, 
-    payload: {
-        additionalPrice: newFeature.price,
-        newFeature: newFeature
-    }
+    payload: newFeature 
   };
 };
 
