@@ -8,23 +8,18 @@ import Total from './components/Total';
 import { addFeature } from './actions/actions'
 
 const App = (props) => {
-  const purchaseItem = (id) => {
-    props.addFeature(id);
-  };
 
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={props.car} />
-        <AddedFeatures car={props.car} />
+        <Header/>
+        <AddedFeatures/>
       </div>
       <div className="box">
-        <AdditionalFeatures 
-          additionalFeatures={props.additionalFeatures}
-          purchaseItem={purchaseItem} />
+        <AdditionalFeatures/>
         <Total 
-          car={props.car} 
-          additionalPrice={props.additionalPrice}
+          car={props.state.car} 
+          additionalPrice={props.state.additionalPrice}
         />
       </div>
     </div>
@@ -34,9 +29,7 @@ const App = (props) => {
 const mapStateToProps = state => {
   console.log({ state });
   return {
-    car: state.car,
-    additionalFeatures: state.additionalFeatures,
-    additionalPrice: state.additionalPrice
+    state
   };
 };
 
@@ -44,5 +37,3 @@ export default connect(
   mapStateToProps,
   { addFeature }
 )(App);
-
-// export default (App);

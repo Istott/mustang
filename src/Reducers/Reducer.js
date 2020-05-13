@@ -25,9 +25,7 @@ export const Reducer = (state = initialState, action) => {
         ...state,
         car: {
             ...state.car, 
-            features: state.car.feature.filter(e => {
-                return e.features.id
-            })
+            features: state.car.features.filter(e => e.id !== action.payload)
         }
       };
     // NEW CASE HERE
@@ -36,9 +34,7 @@ export const Reducer = (state = initialState, action) => {
         ...state,
         car: {
             ...state.car,
-            features: state.car.feature.filter(e => {
-                return e.additionalFeatures.id
-            })
+            features: [...state.car.features, action.payload.newFeature]
         }
       };
     default:
