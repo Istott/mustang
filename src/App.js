@@ -9,6 +9,10 @@ import { addFeature } from './actions/actions'
 
 const App = (props) => {
 
+  // const buyItem = (item) => {
+  //   props.addFeatures(item);
+  // }
+
   return (
     <div className="boxes">
       <div className="box">

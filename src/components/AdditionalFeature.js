@@ -11,6 +11,7 @@ const AdditionalFeature = (props) => {
       <button 
         className="button"
         onClick={() => {props.addFeature(props.feature)}} 
+        // onClick={() => {props.buyItem(props.feature)}} 
       >Add</button>
       {props.feature.name} (+{props.feature.price})
     </li>
